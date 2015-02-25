@@ -1,0 +1,23 @@
+<h1>All Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.quantity %></td>
+    <td><%= item.status %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+
