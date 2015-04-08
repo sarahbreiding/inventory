@@ -1,23 +1,44 @@
-<h1>All Items</h1>
+<h1>All Inventory Items</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Item</th>
       <th>Quantity</th>
       <th>Status</th>
+      <th>Category</th>
+      <th>Location</th>
     </tr>
   </thead>
 
 <% @items.each do |item| %>
   <tr>
-    <td><%= item.name %></td>
+    <td><%= link_to item.name, item %></td>
     <td><%= item.quantity %></td>
     <td><%= item.status %></td>
+    <td>
+      <% if item.category %>
+        <%= link_to item.category.name, item.category %>
+      <% else %>
+        No category
+      <% end %>
+    </td>
+    <td>
+      <% if item.location %>
+        <%= link_to item.location.name, item.location %>
+      <% else %>
+        No location
+      <% end %>
+    </td>
+    <td><%= button_to "Edit", edit_item_path(item), method: :get %></td>
+    <td><%= button_to "Delete", item, method: :delete,
+                                    data: { confirm: "Are you sure?" } %></td>
   </tr>
 <% end %>
 </table>
 
-<br>
+<p>
+  <%= link_to "New Item", new_item_path %>
+</p>
 
 

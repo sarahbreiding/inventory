@@ -1,0 +1,8 @@
+
+<p><strong>Name: </strong><%= @item.name %></p>
+<p><strong>Quantity: </strong><%= @item.quantity %></p>
+<p><strong>Status: </strong><%= @item.status %></p>
+<p><strong>Category: </strong><%= @item.category.name %></p>
+<p><strong>Location: </strong><%= @item.location.name %></p>
+<p><%= link_to "Edit", edit_item_path(@item) %></p>
+

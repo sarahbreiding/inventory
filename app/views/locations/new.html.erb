@@ -1,0 +1,9 @@
+<h1>Add new location</h1>
+<div>
+    <%= form_for(@location) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.submit "Submit" %>
+    <% end %>
+</div>

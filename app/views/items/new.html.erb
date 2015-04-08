@@ -1,0 +1,23 @@
+<h1>New Item</h1>
+<p>Add new item to the inventory</p>
+
+<div>
+    <%= form_for(@item) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity %>
+
+      <%= f.label :status %>
+      <%= f.select :status, options_for_select(%w[Opened Unopened]) %>
+
+      <%= f.label :category %>
+      <%= f.collection_select :category_id, Category.all, :id, :name %>
+
+      <%= f.label :location %>
+      <%= f.collection_select :location_id, Location.all, :id, :name  %>
+
+      <%= f.submit "Submit" %>
+    <% end %>
+</div>
