@@ -7,8 +7,8 @@ class CreateItems < ActiveRecord::Migration
       t.string :status
       t.string :status_label
       t.text :notes
-      t.belongs_to :category, index: true
-      t.belongs_to :location, index: true
+      t.references :category, index: true
+      t.references :location, index: true
 
       t.timestamps null: false
     end

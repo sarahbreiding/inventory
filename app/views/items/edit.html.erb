@@ -1,4 +1,4 @@
-<h1>Edit an item</h1>
+<h1>Edit Item</h1>
   <div>
     <%= form_for(@item) do |f| %>
       <%= f.label :name %>
@@ -19,3 +19,6 @@
       <%= f.submit %>
     <% end %>
   </div>
+
+   <div class="add-new"><%= link_to "Cancel", items_path %></div>
+

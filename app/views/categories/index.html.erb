@@ -1,6 +1,14 @@
-<h1>All Categories</h1>
+<h1>All Categories <%= link_to image_tag("addnew.png"), new_category_path, :class => "add-to-button" %></h1>
+<table>
 <% @categories.each do |category| %>
-<p><%= link_to category.name, category %><%= button_to "Edit", edit_category_path(category), method: :get %><%= button_to "Delete", category, method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <tr>
+    <td><%= link_to category.name, category %></td>
+    <td><%= link_to image_tag("Edit.png"), edit_category_path(category), method: :get %></td>
+    <td><%= link_to image_tag("Delete.png"), category, method: :delete,
+                                                  data: { confirm: "Are you sure?" } %></td>
+  </tr>
 <% end %>
+</table>
+
 
 

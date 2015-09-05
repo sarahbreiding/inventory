@@ -6,6 +6,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    @items = @location.items
   end
 
   def new
@@ -28,7 +29,7 @@ class LocationsController < ApplicationController
   def update
       @location = Location.find(params[:id])
         if @location.update_attributes(location_params)
-            redirect_to @location
+            redirect_to locations_url(@locations)
         else
             render 'edit'
         end

@@ -1,15 +1,69 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html {
+  background: url(nasty_fabric.png);
+  background-repeat: repeat-y repeat-x;
+}
+
+body {
+  font-family: Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+  color: #370938;
+  margin: 25px;
+}
+
+h1 {
+  margin: 10px;
+}
+
+a {
+  color: #2C2B84;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1A80E3;
+}
+
+a:visited {
+  color: #2C2B84;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+td {
+  padding: 5px 10px;
+}
+
+.add-new {
+  display: inline-block;
+  padding: 7px 15px;
+  background-color: #1A80E3;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px 10px 20px 0;
+}
+
+.add-new a {
+    color: #fff;
+}
+
+.add-new:hover {
+  background-color: #000;
+}
+
+
+.add-to-button {
+  display: inline-block;
+}
+
+.search-form {
+  margin: 20px 10px;
+}

@@ -18,7 +18,9 @@
 class Item < ActiveRecord::Base
   belongs_to :category
   belongs_to :location
+  default_scope { order("name ASC") }
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+  end
 end
-
-
-

@@ -1,2 +1,13 @@
-<p><strong>Name: </strong><%= @category.name %></p>
+<h1><%= @category.name %>     <td><%= link_to image_tag("Edit.png"), edit_category_path(@category), method: :get %></td>
+                                                  </h1>
+  <h2>Related Items</h2>
+  <% @items.each do |item| %>
+    <ul>
+      <li><%= item.name %></li>
+    </ul>
+  <% end %>
+<div class="add-new"><%= link_to "Cancel", categories_path %></div>
+
+
+
 

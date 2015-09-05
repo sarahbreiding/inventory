@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @items = @category.items
   end
 
   def new
@@ -28,7 +29,7 @@ class CategoriesController < ApplicationController
   def update
       @category = Category.find(params[:id])
         if @category.update_attributes(category_params)
-            redirect_to @category
+            redirect_to categories_url(@categories)
         else
             render 'edit'
         end

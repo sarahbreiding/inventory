@@ -1,17 +1,18 @@
-<h1>All Inventory Items</h1>
-
+<h1>Inventory <%= link_to image_tag("addnew.png"), new_item_path, :class => "add-to-button" %></h1>
+<div class="search-form">
+  <%= form_tag(items_path, :method => "get") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
 <table>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Status</th>
-      <th><%= link_to "Category", categories_path %></th>
-      <th><%= link_to "Location", locations_path %></th>
-    </tr>
-  </thead>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Status</th>
+    <th class="all-cats"><%= link_to "Category", categories_path %></th>
+    <th class="all-locations"><%= link_to "Location", locations_path %></th>
 
-<% @items.each do |item| %>
+  <% @items.each do |item| %>
   <tr>
     <td><%= link_to item.name, item %></td>
     <td><%= item.quantity %></td>
@@ -30,22 +31,17 @@
         No location
       <% end %>
     </td>
-    <td><%= button_to "Edit", edit_item_path(item), method: :get %></td>
-    <td><%= button_to "Delete", item, method: :delete,
-                                    data: { confirm: "Are you sure?" } %></td>
+    <td><%= link_to image_tag("Edit.png"), edit_item_path(item), method: :get %></td>
+    <td><%= link_to image_tag("Delete.png"), item, method: :delete,
+                                                  data: { confirm: "Are you sure?" } %></td>
+
   </tr>
 <% end %>
 </table>
+  <!--<div class="add-new"><%= link_to "Add New Item", new_item_path %></div>
 
-<button>
-  <%= link_to "Add New Item", new_item_path %>
-</button>
+  <div class="add-new"><%= link_to "Add New Category", new_category_path %></div>
 
-<button>
-  <%= link_to "Add New Category", new_category_path %>
-</button>
-
-<button>
-<%= link_to "Add New Location", new_location_path %>
+  <div class="add-new"><%= link_to "Add New Location", new_location_path %></div> -->
 
 
