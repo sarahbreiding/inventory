@@ -10,7 +10,7 @@
       <%= f.number_field :quantity %>
 
       <%= f.label :status %>
-      <%= f.select :status, options_for_select(%w[Opened Unopened]) %>
+      <%= f.text_field :status %>
 
       <%= f.label :category %>
       <%= f.collection_select :category_id, Category.all, :id, :name %>
