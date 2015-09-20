@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+    @item = Item.new
+    @categories = Category.all
   end
 
   def edit

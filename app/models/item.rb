@@ -21,6 +21,6 @@ class Item < ActiveRecord::Base
   default_scope { order("name ASC") }
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    where("name ILIKE ?", "%#{search}%")
   end
 end
