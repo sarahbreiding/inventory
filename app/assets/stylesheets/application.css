@@ -46,7 +46,7 @@ td {
   margin: 0 .5%;
 }
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 800px) {
   .stacktable.large-only { display: none; }
   .stacktable.small-only { display: table; }
   .mobile-add-new {display:block; width:20%; margin: 1.5% 0;}
