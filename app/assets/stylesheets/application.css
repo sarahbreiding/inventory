@@ -1,11 +1,8 @@
+
 body {
   font-family: Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;
   color: #370938;
-  margin: 25px;
-}
-
-h1 {
-  margin: 10px;
+  margin: 2%
 }
 
 a {
@@ -23,21 +20,56 @@ a:visited {
 
 table {
   border-collapse: collapse;
+  text-align: left;
+  width: 96%;
 }
 
 th {
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: 700;
-  padding: 5px 10px;
-  text-align: left;
+  padding: .5% .5% .5% 0;
 }
 
 td {
-  padding: 5px 10px;
+  padding: .2% .2% .2% 0;
 }
 
 .search-form {
-  margin: 20px 10px;
+  margin: 1% 0;
 }
 
+.stacktable.large-only { display: table; }
+.stacktable.small-only { display: none; }
 
+.mobile-add-new {
+  display:inline-block;
+  margin: 0 .5%;
+}
+
+@media (max-width: 800px) {
+  .stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; }
+  .mobile-add-new {display:block; width:20%; margin: 1.5% 0;}
+}
+
+fieldset {
+  border: none;
+  width: 20%;
+}
+
+fieldset input {
+  float: right;
+  width: 60%;
+}
+
+fieldset select {
+  float: right;
+}
+
+.add-new-on-index {
+  margin: 1% 0;
+}
+
+img[alt="Edit"]{
+  margin: 0 2%;
+}

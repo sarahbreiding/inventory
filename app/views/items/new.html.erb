@@ -3,22 +3,29 @@
 
 <div>
     <%= form_for(@item) do |f| %>
+    <fieldset>
       <%= f.label :name %>
       <%= f.text_field :name %>
-
+    </fieldset>
+    <fieldset>
       <%= f.label :quantity %>
       <%= f.number_field :quantity %>
-
+    </fieldset>
+    <fieldset>
       <%= f.label :status %>
       <%= f.text_field :status %>
-
+    </fieldset>
+    <fieldset>
       <%= f.label :category %>
       <%= f.collection_select :category_id, Category.all, :id, :name %>
-
+    </fieldset>
+    <fieldset>
       <%= f.label :location %>
       <%= f.collection_select :location_id, Location.all, :id, :name  %>
-
+    </fieldset>
+    <fieldset>
       <%= f.submit "Submit" %>
+    </fieldset>
     <% end %>
 </div>
 

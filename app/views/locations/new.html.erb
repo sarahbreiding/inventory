@@ -1,10 +1,13 @@
 <h1>Add new location</h1>
 <div>
     <%= form_for(@location) do |f| %>
+    <fieldset>
       <%= f.label :name %>
       <%= f.text_field :name %>
-
+    </fieldset>
+    <fieldset>
       <%= f.submit "Submit" %>
+    </fieldset>
     <% end %>
 </div>
 <div class="add-new"><%= link_to "Cancel", locations_path %></div>

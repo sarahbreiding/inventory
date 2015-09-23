@@ -1,10 +1,13 @@
 <h1>Edit a location</h1>
   <div>
     <%= form_for(@location) do |f| %>
+    <fieldset>
       <%= f.label :name %>
       <%= f.text_field :name %>
-
+    </fieldset>
+    <fieldset>
       <%= f.submit %>
+    </fieldset>
     <% end %>
   </div>
 
