@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$('#item_name').focus();
+$('#content').stacktable();
