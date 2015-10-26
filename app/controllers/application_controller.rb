@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   private
 
     def authenticate
-      :authenticate_user!
+      authenticate_user! unless Rails.env.development?
     end
 end
