@@ -1,12 +1,13 @@
-<h1>All Categories <%= link_to image_tag("addnew.png"), new_category_path, :class => "add-to-button" %></h1>
+<h1>
+  All Categories
+  <%= link_to image_tag("addnew.png"), new_category_path, :class => "add-to-button" %>
+</h1>
 <div>
-<% @categories.each do |category| %>
-    <div><%= link_to category.name, category %>
-        <%= link_to image_tag("Edit.png"), edit_category_path(category), method: :get %>
-          <%= link_to image_tag("Delete.png"), category, method: :delete,
-                                                  data: { confirm: "Are you sure?" } %></div>
-<% end %>
+  <% @categories.each do |category| %>
+    <div>
+      <%= link_to category.name, category %> (<%= category.items.count %>)
+      <%= link_to image_tag("Edit.png"), edit_category_path(category), method: :get %>
+      <%= link_to image_tag("Delete.png"), category, method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+  <% end %>
 </div>
-
-
-
