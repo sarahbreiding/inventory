@@ -1,7 +1,7 @@
 <h1>Add new category</h1>
-<div>
 
-    <%= form_for(@category) do |f| %>
+<div>
+  <%= form_for(@category) do |f| %>
     <fieldset>
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -9,6 +9,7 @@
     <fieldset>
       <%= f.submit "Submit" %>
     </fieldset>
-    <% end %>
+  <% end %>
 </div>
+
 <div class="add-new"><%= link_to "Cancel", categories_path %></div>
