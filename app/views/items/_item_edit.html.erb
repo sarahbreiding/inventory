@@ -20,7 +20,7 @@
   </div>
   <div class="mobile-add-new">
     <%= f.label :location %>
-    <%= f.collection_select :location_id, Location.all, :id, :name, selected: @location && @location.id  %>
+    <%= f.collection_select :location_id, Location.all, :id, :name, selected: @item.location_id || (@location && @location.id)  %>
   </div>
   <div class="mobile-add-new">
     <%= f.submit "Submit" %>
