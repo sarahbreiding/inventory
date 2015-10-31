@@ -11,9 +11,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
-      @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
-
 
   def update
     @item = Item.find(params[:id])
@@ -24,25 +23,22 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def show
-      @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
-
 
   def new
-      @item = Item.new
-      @categories = Category.all
+    @item = Item.new
+    @categories = Category.all
   end
 
-
   def create
-      @item = Item.new(item_params)
-      if @item.save
-        redirect_to items_url(@items)
-      else
-        render 'new'
-      end
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to params[:redirect] || items_url(@items)
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -55,7 +51,3 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:name, :quantity, :status, :category_id, :location_id)
     end
 end
-
-
-
-
