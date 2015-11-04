@@ -1,10 +1,13 @@
-<h1>All Locations <%= link_to image_tag("addnew.png"), new_location_path, :class => "add-to-button" %></h1>
+<h1>
+  All Locations
+  <%= link_to image_tag("addnew.png"), new_location_path, :class => "add-to-button" %>
+</h1>
 <div>
-<% @locations.each do |location| %>
-    <div><%= link_to location.name, location %> (<%= location.items.count %>)
-    <%= link_to image_tag("Edit.png"), edit_location_path(location), method: :get %>
-    <%= link_to image_tag("Delete.png"), location, method: :delete, data: {confirm: "Are you sure?"} %>
-  </div>
-<% end %>
+  <% @locations.each do |location| %>
+    <div>
+      <%= link_to location.name, location %> (<%= location.items.count %>)
+      <%= link_to image_tag("Edit.png"), edit_location_path(location), method: :get %>
+      <%= link_to image_tag("Delete.png"), location, method: :delete, data: {confirm: "Are you sure?"} %>
+    </div>
+  <% end %>
 </div>
-

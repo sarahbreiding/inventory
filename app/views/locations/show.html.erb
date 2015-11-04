@@ -1,9 +1,11 @@
-<h1><%= @location.name %> <%= link_to image_tag("Edit.png"), edit_location_path(@location), method: :get %></h1>
-  <h2>Items in this location</h2>
-  <% @items.each do |item| %>
-    <ul>
-      <li><%= item.name %></li>
-    </ul>
-  <% end %>
-<div class="add-new"><%= link_to "Cancel", locations_path %></div>
+<h1>
+  <%= @location.name %>
+  <%= link_to image_tag("Edit.png"), edit_location_path(@location), method: :get %>
+</h1>
 
+<%= render 'items/item_edit' %>
+
+<h2>Items in this location</h2>
+<%= render 'items/simple_items' %>
+
+<div><%= link_to "Cancel", locations_path %></div>

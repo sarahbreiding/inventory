@@ -1,0 +1,28 @@
+<%= form_for(@item) do |f| %>
+  <% if @redirect %>
+    <%= hidden_field_tag(:redirect, @redirect) %>
+  <% end %>
+  <div class="mobile-add-new">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="mobile-add-new">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="mobile-add-new">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+  <div class="mobile-add-new">
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+  <div class="mobile-add-new">
+    <%= f.label :location %>
+    <%= f.collection_select :location_id, Location.all, :id, :name, selected: @item.location_id || (@location && @location.id)  %>
+  </div>
+  <div class="mobile-add-new">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

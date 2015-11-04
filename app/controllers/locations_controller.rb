@@ -7,6 +7,8 @@ class LocationsController < ApplicationController
   def show
     @location = Location.find(params[:id])
     @items = @location.items
+    @item = Item.new
+    @redirect = location_url(@location)
   end
 
   def new
