@@ -20,7 +20,9 @@ class Item < ActiveRecord::Base
   belongs_to :location
   default_scope { order("name ASC") }
 
-  def self.search(search)
-    where("name ILIKE ?", "%#{search}%")
+  def self.search(params)
+    items = all
+    items = items.where("name ILIKE ?", "%#{params[:search]}%") if params[:search]
+    items
   end
 end

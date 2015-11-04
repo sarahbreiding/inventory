@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
 
   def index
     if params[:search]
-      @items = Item.search(params[:search])
+      #@items = Item.search(params[:search])
+      @items = Item.search(params).paginate(:page => params[:page], :per_page => 20)
     else
       @items = Item.all.paginate(page: params[:page], per_page: 20)
     end

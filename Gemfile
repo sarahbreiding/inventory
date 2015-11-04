@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
 gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 group :production do
   gem 'pg'
