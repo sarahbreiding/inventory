@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     if params[:search]
       @items = Item.search(params[:search])
     else
-      @items = Item.all
+      @items = Item.all.paginate(page: params[:page], per_page: 20)
     end
     @item = Item.new
     @categories = Category.all
