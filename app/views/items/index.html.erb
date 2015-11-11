@@ -12,7 +12,7 @@
 <table id="content">
     <th>Item</th>
     <th>Quantity</th>
-    <th>Status</th>
+    <th>Notes</th>
     <th>Expiration</th>
     <th><%= link_to "Category", categories_path %></th>
     <th><%= link_to "Location", locations_path %></th>
@@ -21,7 +21,7 @@
   <tr>
     <td><%= link_to item.name, item %></td>
     <td><%= item.quantity %></td>
-    <td><%= item.status %></td>
+    <td><%= item.notes %></td>
     <td><%= item.expiration_date %></td>
     <td>
       <% if item.category %>

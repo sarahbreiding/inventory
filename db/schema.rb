@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912223035) do
+ActiveRecord::Schema.define(version: 20151111003717) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -23,17 +26,15 @@ ActiveRecord::Schema.define(version: 20150912223035) do
     t.string   "name"
     t.date     "expiration_date"
     t.integer  "quantity"
-    t.string   "status"
-    t.string   "status_label"
-    t.text     "notes"
+    t.string   "notes"
     t.integer  "category_id"
     t.integer  "location_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
-  add_index "items", ["category_id"], name: "index_items_on_category_id"
-  add_index "items", ["location_id"], name: "index_items_on_location_id"
+  add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
+  add_index "items", ["location_id"], name: "index_items_on_location_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
@@ -49,6 +50,6 @@ ActiveRecord::Schema.define(version: 20150912223035) do
     t.datetime "updated_at",                       null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
