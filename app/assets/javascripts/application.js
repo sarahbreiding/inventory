@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require stacktable
+//= require select2
 //= require_tree .
 
 $('#item_name').focus();
 $('#content').stacktable();
+$('.select2').select2();

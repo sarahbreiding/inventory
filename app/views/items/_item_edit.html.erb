@@ -20,11 +20,11 @@
   </div>
   <div class="mobile-add-new">
     <%= f.label :category %>
-    <%= f.collection_select :category_id, Category.all, :id, :name %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {}, class: 'select2' %>
   </div>
   <div class="mobile-add-new">
     <%= f.label :location %>
-    <%= f.collection_select :location_id, Location.all, :id, :name, selected: @item.location_id || (@location && @location.id)  %>
+    <%= f.collection_select :location_id, Location.all, :id, :name, {selected: @item.location_id || (@location && @location.id)}, class: 'select2'  %>
   </div>
   <div class="mobile-add-new">
     <%= f.submit "Submit" %>
