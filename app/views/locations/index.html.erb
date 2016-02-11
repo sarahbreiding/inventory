@@ -6,8 +6,8 @@
   <% @locations.each do |location| %>
     <div>
       <%= link_to location.name, location %> (<%= location.items.count %>)
-      <%= link_to image_tag("Edit.png"), edit_location_path(location), method: :get %>
-      <%= link_to image_tag("Delete.png"), location, method: :delete, data: {confirm: "Are you sure?"} %>
+      <%= link_to "Edit", edit_location_path(location), method: :get %> |
+      <%= link_to "Delete", location, method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
   <% end %>
 </div>

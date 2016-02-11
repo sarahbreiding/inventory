@@ -79,3 +79,31 @@ fieldset select {
 .item-actions a {
   margin-left: 10px;
 }
+
+.header {
+  position: relative;
+}
+
+.home-icon {
+  display: inline-block;
+}
+
+.category-icon, .location-icon {
+  background-color: #000;
+  display: inline-block;
+  padding: .5em;
+  position: absolute;
+  top: 10%;
+}
+
+.category-icon {
+  left: 3.5em;
+}
+
+.location-icon {
+  left: 10em;
+}
+
+.category-icon a, .location-icon a {
+  color: #fff;
+}

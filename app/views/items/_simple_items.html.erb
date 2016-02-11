@@ -4,7 +4,8 @@
       <%= item.name %>
       (<%= item.quantity || 0 %>)
       <%= item.notes %>
-      <%= link_to image_tag("Edit.png"), edit_item_path(item) %>
+      <%= link_to 'Edit', edit_item_path(item) %> |
+      <%= link_to 'Delete', item_path, method: :delete, data: {confirm: "Are you sure?"} %>
     </li>
   </ul>
 <% end %>
