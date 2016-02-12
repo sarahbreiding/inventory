@@ -15,29 +15,31 @@
 
 </head>
 <body>
-<ul class='header'>
-    <li class='home-icon'><%= link_to image_tag("home.png"), root_path %></li>
-    <li class='category-icon'><a href="#">Categories</a></li>
-    <li class='location-icon'><a href="#">Locations</a></li>
-</ul>
+  <ul class='header'>
+      <li class='home-icon'><%= link_to image_tag("home.png"), root_path %></li>
+      <li class='category-icon'><a href="#">Categories</a></li>
+      <li class='location-icon'><a href="#">Locations</a></li>
+  </ul>
 <div style="clear: both;"></div>
-<div class='category-dropdown'>
-  <% @categories.each do |category| %>
-  <ul>
-    <li>
-      <%= link_to category.name, category %>
-    </li>
-  </ul>
-  <% end %>
-</div>
-<div class='location-dropdown'>
-  <% @locations.each do |location| %>
-  <ul>
-    <li>
-      <%= link_to location.name, location %>
-    </li>
-  </ul>
-  <% end %>
+<div class='parent'>
+  <div class='category-dropdown'>
+    <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <%= link_to category.name, category %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+  <div class='location-dropdown'>
+    <% @locations.each do |location| %>
+    <ul>
+      <li>
+        <%= link_to location.name, location %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
 </div>
 
   <%= yield %>
@@ -45,3 +47,5 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
+
+

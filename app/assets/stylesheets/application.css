@@ -82,6 +82,7 @@ fieldset select {
 
 .header {
   padding: 0;
+  position: relative;
 }
 
 .header li {
@@ -91,7 +92,7 @@ fieldset select {
 
 .category-icon, .location-icon {
   background-color: #000;
-  margin: .2em;
+  margin: .2em .2em 0 .2em;
   padding: .5em;
   width: 125px;
 }
@@ -100,32 +101,37 @@ fieldset select {
   color: #fff;
 }
 
+.parent {
+  position: relative;
+}
+
+.category-dropdown, .location-dropdown {
+  background-color: #000;
+  display: none;
+  position: absolute;
+}
+
+.category-dropdown {
+  left: 2.7em;
+  top: -.36em;
+  width: 141px;
+}
+
+.location-dropdown {
+  left: 11.9em;
+  top: -.36em;
+  width: 141.5px;
+}
 .category-dropdown ul, .location-dropdown ul{
   list-style-type: none;
   padding: 0;
 }
 
-.category-dropdown, .location-dropdown {
-  background-color: #000;
-  position: absolute;
-  display: none;
-}
-
-.category-dropdown {
-  left: 4.34em;
-  top: 4em;
-}
-
-.location-dropdown {
-  top: 4em;
-  left: 13.5em
+.category-dropdown li, .location-dropdown li {
+  padding: .5em;
 }
 
 .category-dropdown a, .location-dropdown a {
   color: #fff;
 }
 
-.category-dropdown li, .location-dropdown li {
-  width: 125px;
-  padding: .5em;
-}
