@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     end
     @item = Item.new
     @categories = Category.all
+    @locations = Location.all
   end
 
   def edit

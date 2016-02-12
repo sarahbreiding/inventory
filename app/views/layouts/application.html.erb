@@ -15,10 +15,29 @@
 
 </head>
 <body>
-<div class='header'>
-  <div class='home-icon'><%= link_to image_tag("home.png"), root_path %></div>
-  <div class='category-icon'><%= link_to "Categories", categories_path %></div>
-  <div class='location-icon'><%= link_to "Locations", locations_path %></div>
+<ul class='header'>
+    <li class='home-icon'><%= link_to image_tag("home.png"), root_path %></li>
+    <li class='category-icon'><a href="#">Categories</a></li>
+    <li class='location-icon'><a href="#">Locations</a></li>
+</ul>
+<div style="clear: both;"></div>
+<div class='category-dropdown'>
+  <% @categories.each do |category| %>
+  <ul>
+    <li>
+      <%= link_to category.name, category %>
+    </li>
+  </ul>
+  <% end %>
+</div>
+<div class='location-dropdown'>
+  <% @locations.each do |location| %>
+  <ul>
+    <li>
+      <%= link_to location.name, location %>
+    </li>
+  </ul>
+  <% end %>
 </div>
 
   <%= yield %>

@@ -19,4 +19,11 @@
 
 $('#item_name').focus();
 $('#content').stacktable();
-$('.select2').select2();
+//$('.select2').select2();
+$('.category-icon').click(function(){
+  $('.category-dropdown').slideToggle();
+});
+$('.location-icon').click(function(){
+  $('.location-dropdown').slideToggle();
+});
+

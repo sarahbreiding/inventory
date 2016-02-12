@@ -4,10 +4,12 @@
 </h1>
 <div>
   <% @categories.each do |category| %>
-    <div>
-      <%= link_to category.name, category %> (<%= category.items.count %>)
-      <%= link_to "Edit", edit_category_path(category), method: :get %> |
-      <%= link_to "Delete", category, method: :delete, data: { confirm: "Are you sure?" } %>
-    </div>
+    <ul>
+      <li>
+        <%= link_to category.name, category %> (<%= category.items.count %>)
+        <%= link_to "Edit", edit_category_path(category), method: :get %> |
+        <%= link_to "Delete", category, method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    </ul>
   <% end %>
 </div>

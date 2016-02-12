@@ -4,10 +4,12 @@
 </h1>
 <div>
   <% @locations.each do |location| %>
-    <div>
-      <%= link_to location.name, location %> (<%= location.items.count %>)
-      <%= link_to "Edit", edit_location_path(location), method: :get %> |
-      <%= link_to "Delete", location, method: :delete, data: {confirm: "Are you sure?"} %>
-    </div>
+    <ul>
+      <li>
+        <%= link_to location.name, location %> (<%= location.items.count %>)
+        <%= link_to "Edit", edit_location_path(location), method: :get %> |
+        <%= link_to "Delete", location, method: :delete, data: {confirm: "Are you sure?"} %>
+      </li>
+    </ul>
   <% end %>
 </div>

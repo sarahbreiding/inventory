@@ -3,6 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate
+  before_filter :set_locations, except: [:create, :update, :destroy]
+  before_filter :set_categories, except: [:create, :update, :destroy]
+
+  def set_locations
+      @locations = Location.all
+  end
+
+  def set_categories
+      @categories = Category.all
+  end
 
   private
 
