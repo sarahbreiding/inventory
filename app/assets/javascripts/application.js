@@ -20,10 +20,10 @@
 $('#item_name').focus();
 $('#content').stacktable();
 //$('.select2').select2();
-$('.category-icon').click(function(){
+$('.category-icon').mouseover(function(){
   $('.category-dropdown').slideToggle();
 });
-$('.location-icon').click(function(){
+$('.location-icon').mouseover(function(){
   $('.location-dropdown').slideToggle();
 });
 

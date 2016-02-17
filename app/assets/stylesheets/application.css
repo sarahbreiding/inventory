@@ -94,7 +94,7 @@ fieldset select {
   background-color: #000;
   margin: .2em .2em 0 .2em;
   padding: .5em;
-  width: 125px;
+  width: 300px;
 }
 
 .category-icon a, .location-icon a {
@@ -114,14 +114,15 @@ fieldset select {
 .category-dropdown {
   left: 2.7em;
   top: -.36em;
-  width: 141px;
+  width: 316px;
 }
 
 .location-dropdown {
-  left: 11.9em;
+  left: 22.85em;
   top: -.36em;
-  width: 141.5px;
+  width: 316px;
 }
+
 .category-dropdown ul, .location-dropdown ul{
   list-style-type: none;
   padding: 0;

@@ -17,8 +17,8 @@
 <body>
   <ul class='header'>
       <li class='home-icon'><%= link_to image_tag("home.png"), root_path %></li>
-      <li class='category-icon'><a href="#">Categories</a></li>
-      <li class='location-icon'><a href="#">Locations</a></li>
+      <li class='category-icon'><%= link_to "Categories", categories_path %></li>
+      <li class='location-icon'><%= link_to "Locations", locations_path %></li>
   </ul>
 <div style="clear: both;"></div>
 <div class='parent'>
