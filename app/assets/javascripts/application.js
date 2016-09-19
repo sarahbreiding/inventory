@@ -11,19 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require stacktable
 //= require select2
 //= require_tree .
 
-$('#item_name').focus();
 $('#content').stacktable();
-//$('.select2').select2();
-$('.category-icon').mouseover(function(){
-  $('.category-dropdown').slideToggle();
+$('.select2').select2();
+$('.dropdown button').off('click').on('click', function () {
+  $(this).siblings('ul').slideToggle()
+  $(this).parent().toggleClass('down');
 });
-$('.location-icon').mouseover(function(){
-  $('.location-dropdown').slideToggle();
-});
-

@@ -12,40 +12,37 @@
   <link rel="apple-touch-icon-precomposed" href="<%= image_url('app-icon-180.png') %>" sizes="180x180">
   <link rel="apple-touch-icon-precomposed" href="<%= image_url('app-icon-76.png') %>"  sizes="76x76">
   <link rel="apple-touch-icon-precomposed" href="<%= image_url('app-icon-152.png') %>" sizes="152x152">
-
 </head>
 <body>
   <ul class='header'>
-      <li class='home-icon'><%= link_to image_tag("home.png"), root_path %></li>
-      <li class='category-icon'><%= link_to "Categories", categories_path %></li>
-      <li class='location-icon'><%= link_to "Locations", locations_path %></li>
+    <li class='home-icon'><%= link_to image_tag("home.png"), root_path %></li>
+    <li class='dropdown'>
+      <%= link_to "Categories", categories_path %>
+      <button></button>
+      <ul>
+        <% @categories.each do |category| %>
+          <li>
+            <%= link_to category.name, category %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+    <li class='dropdown'>
+      <%= link_to "Locations", locations_path %>
+      <button></button>
+      <ul>
+        <% @locations.each do |location| %>
+          <li>
+            <%= link_to location.name, location %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
   </ul>
-<div style="clear: both;"></div>
-<div class='parent'>
-  <div class='category-dropdown'>
-    <ul>
-    <% @categories.each do |category| %>
-      <li>
-        <%= link_to category.name, category %>
-      </li>
-    <% end %>
-    </ul>
-  </div>
-  <div class='location-dropdown'>
-    <% @locations.each do |location| %>
-    <ul>
-      <li>
-        <%= link_to location.name, location %>
-      </li>
-    </ul>
-    <% end %>
-  </div>
-</div>
+  <div style="clear: both;"></div>
 
   <%= yield %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
-
-

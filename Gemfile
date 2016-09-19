@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 ruby "2.3.0"
 
 gem 'rails', '4.2.0'
+gem 'jquery-turbolinks'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem "select2-rails"
 gem 'devise'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
