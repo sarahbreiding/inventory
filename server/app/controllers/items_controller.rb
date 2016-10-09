@@ -1,15 +1,17 @@
 class ItemsController < ApplicationController
 
   def index
-    if params[:search]
+    items = if params[:search]
       #@items = Item.search(params[:search])
-      @items = Item.search(params).paginate(:page => params[:page], :per_page => 20)
+      Item.search(params).paginate(:page => params[:page], :per_page => 20)
     else
-      @items = Item.all.paginate(page: params[:page], per_page: 20)
+      Item.all.paginate(page: params[:page], per_page: 20)
     end
-    @item = Item.new
-    @categories = Category.all
-    @locations = Location.all
+    # @item = Item.new
+    # @categories = Category.all
+    # @locations = Location.all
+
+    render json: items, status: 200
   end
 
   def edit
