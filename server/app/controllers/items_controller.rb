@@ -37,11 +37,11 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to params[:redirect] || items_url(@items)
+    item = Item.new(item_params)
+    if item.save
+      render json: item, status: 201, location: item
     else
-      render 'new'
+      render json: item.errors, status: 422
     end
   end
 

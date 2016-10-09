@@ -1,5 +1,8 @@
-var React = require('react')
 var axios = require('axios')
+var React = require('react')
+var Items = require('../items/items')
+var AddItem = require('../items/add-item')
+
 
 var App = React.createClass({
   getInitialState: function () {
@@ -19,34 +22,17 @@ var App = React.createClass({
 
   render: function () {
     return (
-      <table id="content">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>Notes</th>
-            <th>Expiration</th>
-            <th>Category</th>
-            <th>Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.items.map(function (item) {
-            return (
-              <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.quantity}</td>
-                <td>{item.notes}</td>
-                <td>{item.expiration_date}</td>
-                <td>{item.category ? item.category.name : 'No Category'}</td>
-                <td>{item.location ? item.location.name : 'No Location'}</td>
-                <td className="item-actions">Edit/Delete</td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
+      <div>
+        <AddItem onAdd={this.itemAdded}/>
+        <Items items={this.state.items}/>
+      </div>
     )
+  },
+
+  itemAdded: function (item) {
+    this.setState({
+      items: this.state.items.concat(item),
+    })
   },
 })
 
