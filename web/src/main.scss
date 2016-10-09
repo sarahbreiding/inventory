@@ -1,0 +1,156 @@
+body {
+  font-family: Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+  color: #370938;
+  margin: 2%;
+}
+
+a {
+  color: #2C2B84;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1A80E3;
+}
+
+a:visited {
+  color: #2C2B84;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 96%;
+}
+
+th {
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: .5% .5% .5% 0;
+}
+
+td {
+  padding: .2% .2% .2% 0;
+}
+
+.search-form {
+  border-top: solid 1px #d3d3d3;
+  margin: 2% 0;
+  padding-top: 2%;
+}
+
+.stacktable.large-only { display: table; }
+.stacktable.small-only { display: none; }
+
+.mobile-add-new {
+  display:inline-block;
+  margin: 1% .5%;
+}
+
+@media only screen and (max-width: 800px) {
+  .stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; }
+}
+
+fieldset {
+  border: none;
+  width: 20%;
+}
+
+fieldset input {
+  float: right;
+  width: 60%;
+}
+
+fieldset select {
+  float: right;
+}
+
+.add-new-on-index {
+  margin: 1% 0;
+}
+
+.item-actions a {
+  margin-left: 10px;
+}
+
+.header {
+  padding: 0;
+  position: relative;
+}
+
+.header li {
+  list-style: none;
+}
+
+.header > li {
+  float: left;
+}
+
+.dropdown {
+  background-color: #000;
+  margin: .2em .2em 0 1em;
+  padding-right: 35px;
+  position: relative;
+
+  > a {
+    height: 35px;
+    line-height: 35px;
+
+    &:hover,
+    &:focus {
+      background: #333;
+    }
+  }
+
+  a {
+    color: #fff;
+    display: block;
+    padding: 0 20px;
+  }
+}
+
+.dropdown button {
+  background: image-url('arrows.png') no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+
+  &:hover,
+  &:focus {
+    background-color: #333;
+  }
+}
+
+.dropdown.down button {
+  background-position: -35px 0;
+}
+
+.dropdown ul {
+  background-color: #333;
+  display: none;
+  left: 0;
+  list-style-type: none;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.dropdown li {
+  display: block;
+
+  a {
+    padding: 10px 20px;
+
+    &:hover,
+    &:focus {
+      background: #666;
+    }
+  }
+}
