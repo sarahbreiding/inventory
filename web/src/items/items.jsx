@@ -1,9 +1,7 @@
 var React = require('react')
-
+var Item = require('./item')
 
 var Items = React.createClass({
-
-
   render: function () {
     return (
       <table id="content">
@@ -20,17 +18,13 @@ var Items = React.createClass({
         <tbody>
           {this.props.items.map(function (item) {
             return (
-              <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.quantity}</td>
-                <td>{item.notes}</td>
-                <td>{item.expiration_date}</td>
-                <td>{item.category ? item.category.name : 'No Category'}</td>
-                <td>{item.location ? item.location.name : 'No Location'}</td>
-                <td className="item-actions">Edit/Delete</td>
-              </tr>
+              <Item
+                key={item.id}
+                item={item}
+                onUpdate={this.props.onUpdate}
+              />
             )
-          })}
+          }.bind(this))}
         </tbody>
       </table>
     )

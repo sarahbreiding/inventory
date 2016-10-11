@@ -19,11 +19,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
-    if @item.update_attributes(item_params)
-      redirect_to @item
+    item = Item.find(params[:id])
+    if item.update_attributes(item_params)
+      render json: item, status: 200
     else
-        render 'edit'
+      render json: item.errors, status: 422
     end
   end
 
