@@ -1,5 +1,5 @@
 var React = require('react')
-var axios = require('axios')
+
 var Item = React.createClass({
   getInitialState: function () {
     return {
@@ -20,7 +20,7 @@ var Item = React.createClass({
         <td>{item.location ? item.location.name : 'No Location'}</td>
         <td className="item-actions">
           <button onClick={this.toggleEdit}>{this.state.isEditing ? 'Save' : 'Edit'}</button>
-          <button>Delete</button>
+          <button onClick={this.deleteItem}>Delete</button>
         </td>
       </tr>
     )
@@ -38,10 +38,12 @@ var Item = React.createClass({
     }
 
     this.props.onUpdate(updatedItem)
+  },
 
-    axios.put('http://localhost:3000/items/' + this.props.item.id, {
-      item: updatedItem,
-    })
+  deleteItem: function () {
+    if (confirm('Are you sure you want to delete this item?')) {
+      this.props.onDelete(this.props.item.id)
+    }
   },
 
   toggleEdit: function () {

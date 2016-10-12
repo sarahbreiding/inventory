@@ -22,6 +22,7 @@ var Items = React.createClass({
                 key={item.id}
                 item={item}
                 onUpdate={this.props.onUpdate}
+                onDelete={this.props.onDelete}
               />
             )
           }.bind(this))}

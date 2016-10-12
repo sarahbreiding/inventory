@@ -3,7 +3,6 @@ var React = require('react')
 var Items = require('../items/items')
 var AddItem = require('../items/add-item')
 
-
 var App = React.createClass({
   getInitialState: function () {
     return {
@@ -13,11 +12,13 @@ var App = React.createClass({
 
   componentWillMount: function () {
     axios.get('http://localhost:3000/items')
-    .then(function (response) {
-      this.setState({
-        items: response.data,
-      })
-    }.bind(this))
+    .then(this.setItems)
+  },
+
+  setItems: function (response) {
+    this.setState({
+      items: response.data,
+    })
   },
 
   render: function () {
@@ -27,33 +28,29 @@ var App = React.createClass({
         <Items
           items={this.state.items}
           onUpdate={this.itemUpdated}
+          onDelete={this.itemDeleted}
         />
       </div>
     )
   },
 
   itemAdded: function (item) {
-    this.setState({
-      items: this.state.items.concat(item),
-    })
-  },
-
-  getItemById: function (id) {
-    var itemsWithId = this.state.items.filter(function (item) {
-      return item.id === id
-    })
-    return itemsWithId[0]
+    axios.post('http://localhost:3000/items', {
+      item: item,
+    }).then(this.setItems)
   },
 
   itemUpdated: function (updatedItem) {
-    var item = this.getItemById(updatedItem.id)
-    Object.keys(updatedItem).forEach(function (prop) {
-      item[prop] = updatedItem[prop]
-    })
-    this.setState({
-      items: this.state.items,
-    })
+    axios.put('http://localhost:3000/items/' + updatedItem.id, {
+      item: updatedItem,
+    }).then(this.setItems)
   },
+
+  itemDeleted: function (id) {
+    axios.delete('http://localhost:3000/items/' + id)
+    .then(this.setItems)
+  },
+
 })
 
 module.exports = App

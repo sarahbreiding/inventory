@@ -28,22 +28,21 @@ var AddItem = React.createClass({
 
   addItem: function (e) {
     e.preventDefault()
-    axios.post('http://localhost:3000/items', {
-      item: {
-        name: this.refs.name.value,
-        quantity: this.refs.quantity.value,
-        notes: this.refs.notes.value,
-        category_id: null,
-        location_id: null,
-        expiration_date: this.refs.expirationDate.value,
-      },
-    }).then(function (response) {
-      this.refs.name.value = ''
-      this.refs.quantity.value = ''
-      this.refs.notes.value = ''
-      this.refs.expirationDate.value = ''
-      this.props.onAdd(response.data)
-    }.bind(this))
+    var item = {
+      name: this.refs.name.value,
+      quantity: this.refs.quantity.value,
+      notes: this.refs.notes.value,
+      category_id: null,
+      location_id: null,
+      expiration_date: this.refs.expirationDate.value,
+    }
+
+    this.props.onAdd(item)
+
+    this.refs.name.value = ''
+    this.refs.quantity.value = ''
+    this.refs.notes.value = ''
+    this.refs.expirationDate.value = ''
   },
 })
 
